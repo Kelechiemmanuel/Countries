@@ -43,13 +43,13 @@ const Countries = () => {
                     <input
                         type="text"
                         placeholder="Search for a country..."
-                        className="border p-2 mb-5 w-full md:w-[50%] outline-0 rounded-sm"
+                        className="p-2 mb-5 w-full md:w-[50%] outline-0 border-2 border-gray-200 rounded-sm"
                         value={search}
                         onChange={(e) => setSearch(e.target.value)}
                     />
 
                     <select
-                        className="border p-2 mb-5 w-30% rounded-sm outline-0"
+                        className="border-2 border-gray-200 text-gray-500 p-2 mb-5 w-30% rounded-sm outline-0 "
                         value={region}
                         onChange={(e) => setRegion(e.target.value)}
                     >
