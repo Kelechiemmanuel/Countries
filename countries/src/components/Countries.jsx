@@ -74,7 +74,7 @@ const Countries = () => {
                     return (
                         <div key={index} className='flex flex-col text-center justify-center rounded-sm items-center w-full mx-auto'>
                             {/* <div> */}
-                            <img src={country.flags.png} alt={country.name.common} className='lg:w-100 w-full h-40 object-cover rounded-t-sm border-2 border-gray-200' />
+                            <img src={country.flags.png} alt={country.name.common} className='lg:w-100 w-full h-40 object-cover rounded-sm border-2 border-gray-200' />
                             {/* </div> */}
                             <div className='bg-mist-200 w-full py-10 px-2 rounded-b-sm'>
                                 <h3 className='text-sm font-bold md:text-sm my-1'>{country.name.common}</h3>
