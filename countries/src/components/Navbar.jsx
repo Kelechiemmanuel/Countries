@@ -9,11 +9,6 @@ const Navbar = () => {
             <Link to='/about'>About</Link>
             <Link to='/testimonials'>Testimonials</Link>
             <Link to='/countries'>Countries</Link>
-            <div className='flex flex-col gap-0.5'>
-              <div className='w-4 h-0.5 bg-black'></div>
-              <div className='w-4 h-0.5 bg-black'></div>
-              <div className='w-4 h-0.5 bg-black'></div>
-            </div>
         </ul>
     </nav>
   )
