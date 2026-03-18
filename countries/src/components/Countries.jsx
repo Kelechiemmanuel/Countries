@@ -10,7 +10,7 @@ const Countries = () => {
     useEffect(() => {
         const fetchCountries = async () => {
             try {
-                const response = await axios.get("https://restcountries.com/v3.1/all?fields=name,flags,population,currencies,region");
+                const response = await axios.get("https://restcountries.com/v3.1/all?fields=name,flags,population,currencies,region,capital");
                 setTimeout(() => {
                     setCountries(response.data);
                     setLoading(false)
@@ -26,9 +26,9 @@ const Countries = () => {
     }, [])
 
     const filteredCountries = countries.filter((country) => {
-        const matchesSearch = country.name.common
-            .toLowerCase()
-            .includes(search.toLowerCase());
+        const matchesSearch = country.name.common 
+            .toLowerCase().includes(search.toLowerCase()) || 
+            country.capital?.[0]?.toLowerCase().includes(search.toLowerCase());
         const matchesRegion = region ? country.region === region : true;
         return matchesSearch && matchesRegion;
 
@@ -42,7 +42,7 @@ const Countries = () => {
                 <div className='flex flex-wrap justify-center items-center w-full gap-5 mx-auto px-10'>
                     <input
                         type="text"
-                        placeholder="Search for a country..."
+                        placeholder="Search for a country or Capital..."
                         className="p-2 mb-5 w-full md:w-[50%] outline-0 border-2 border-gray-200 rounded-sm"
                         value={search}
                         onChange={(e) => setSearch(e.target.value)}
